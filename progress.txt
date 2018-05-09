@@ -1,0 +1,4 @@
+SELECT *
+FROM `avatars`
+ORDER BY id_user DESC
+LIMIT 0 , 30
