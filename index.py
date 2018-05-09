@@ -1,5 +1,6 @@
 import mysql.connector
 import hashlib
+from time import sleep
 #import pymysql #for python3
 #sudo apt-get install python-pip
 #sudo apt-get install python3-pip
@@ -19,8 +20,8 @@ cnx.autocommit=True
 #  select * from maintable
 #    """)
 #result = cursor.fetchall()
-astart = 11
-aend   = 10000+1
+astart = 20001
+aend   = 100000+1
 opener = urllib.request.FancyURLopener({})
 
 
@@ -28,7 +29,75 @@ opener = urllib.request.FancyURLopener({})
 for x in range(astart, aend):
     url = "https://avatars3.githubusercontent.com/u/"+str(x)
     #print(url)
-    f = opener.open(url)
+    ds = 1;
+    try:
+        f = opener.open(url)
+    except Exception:
+        sleep(ds)
+        ds = ds * 2
+        try:
+            f = opener.open(url)
+        except Exception:
+            sleep(ds)
+            ds = ds * 2
+            try:
+                f = opener.open(url)
+            except Exception:
+                sleep(ds)
+                try:
+                    f = opener.open(url)
+                except Exception:
+                    sleep(30)
+                    try:
+                        f = opener.open(url)
+                    except Exception:
+                        print("one minute delay on "+str(x))
+                        sleep(60)
+                        try:
+                            f = opener.open(url)
+                        except Exception:
+                            print("2 min delay on "+str(x))
+                            sleep(120)
+                            try:
+                                f = opener.open(url)
+                            except Exception:
+                                sleep(240)#4m
+                                try:
+                                    f = opener.open(url)
+                                except Exception:
+                                    sleep(480)
+                                    try:
+                                        f = opener.open(url)
+                                    except Exception:
+                                        sleep(960)#15m
+                                        try:
+                                            f = opener.open(url)
+                                        except Exception:
+                                            sleep(1920)#30m
+                                            try:
+                                                f = opener.open(url)
+                                            except Exception:
+                                                sleep(4000)#1h
+                                                try:
+                                                    f = opener.open(url)
+                                                except Exception:
+                                                    sleep(8000)#2h
+                                                    try:
+                                                        f = opener.open(url)
+                                                    except Exception:
+                                                        sleep(16000)#4h
+                                                        try:
+                                                            f = opener.open(url)
+                                                        except Exception:
+                                                            sleep(32000)#8h
+                                                            try:
+                                                                f = opener.open(url)
+                                                            except Exception:
+                                                                sleep(64000)#16h																
+                                                                try:
+                                                                    f = opener.open(url)
+                                                                except Exception:
+                                                                    print("there was an fatal error, my friend "+str(x))
     content = f.read()
     str_content = str(content)
     #print hashlib.md5("whatever your string is").hexdigest() #python 2.7
