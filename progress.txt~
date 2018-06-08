@@ -1,5 +1,5 @@
 SELECT *
 FROM `avatars`
-WHERE id_user < 3000000
+WHERE id_user < 1000000
 ORDER BY id_user DESC
 LIMIT 0 , 30

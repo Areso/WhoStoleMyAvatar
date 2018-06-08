@@ -24,21 +24,8 @@ mycursor = cnx.cursor()
 cnx.autocommit=True
 # result = cursor.fetchall()
 
-def myread_avatars(mycursor):
-    global mycurrid
-    try:
-        mycursor.execute("SELECT id_user FROM `avatars` ORDER BY id_user DESC LIMIT 0 , 1")
-        resulta = mycursor.fetchall()
-        for row in resulta:
-            mycurrid = row[0]
-        return mycurrid;
-    except Exception as e:
-        print("there was an error "+str(datetime.datetime.now())+" "+str(e))
-        return;
-
-myread_avatars(mycursor)
-astart = mycurrid+1
-aend   = 50000000+1
+astart = 3335016
+aend   = 5000000+1
 opener = urllib.request.FancyURLopener({})
 
 def url_opener(delaytime, url, x, mystarted):
@@ -80,4 +67,3 @@ for x in range(astart, aend):
     url = "https://avatars3.githubusercontent.com/u/"+str(x)
     #print(url)
     url_opener(0, url, x, mystarted)
-

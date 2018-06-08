@@ -1,0 +1,3 @@
+#mysql -u root -p github_avatars
+#mysql>use github_avatars;
+#mysql>source github_avatars

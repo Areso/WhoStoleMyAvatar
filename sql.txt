@@ -1,0 +1,18 @@
+https://stackoverflow.com/questions/11461646/how-to-find-duplicates-in-database
+
+SELECT a.host_id
+FROM host_webs a
+JOIN host_webs b ON a.host_id != b.host_id AND a.web = b.web
+GROUP BY a.host_id
+
+SELECT a.id_user
+FROM avatars a
+JOIN avatars b ON a.id_user != b.id_user AND a.avatarh = b.avatarh
+GROUP BY a.id_user
+
+SELECT a.id_user FROM avatars a JOIN avatars b ON a.id_user != b.id_user AND a.avatarh = b.avatarh GROUP BY a.id_user;
+
+ALTER TABLE `avatars`
+  DROP PRIMARY KEY,
+   ADD PRIMARY KEY(
+     `id_user`);

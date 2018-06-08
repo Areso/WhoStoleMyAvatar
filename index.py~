@@ -25,7 +25,7 @@ cnx.autocommit=True
 # result = cursor.fetchall()
 
 def myread_avatars(mycursor):
-    global mycurrid
+    global astart
     try:
         mycursor.execute("SELECT id_user FROM `avatars` ORDER BY id_user DESC LIMIT 0 , 1")
         resulta = mycursor.fetchall()
