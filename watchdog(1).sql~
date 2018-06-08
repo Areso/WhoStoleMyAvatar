@@ -1,0 +1,67 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 09, 2018 at 02:33 AM
+-- Server version: 5.5.60-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `github_avatars`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `watchdog`
+--
+
+CREATE TABLE IF NOT EXISTS `watchdog` (
+  `id_record` int(11) NOT NULL AUTO_INCREMENT,
+  `pos` int(11) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_record`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `watchdog`
+--
+
+INSERT INTO `watchdog` (`id_record`, `pos`, `datetime`) VALUES
+(1, 1, '2018-06-08 19:18:59'),
+(2, 0, '2018-06-08 19:37:03'),
+(3, 0, '2018-06-08 19:37:13'),
+(4, 0, '2018-06-08 19:37:16'),
+(5, 0, '2018-06-08 19:37:17'),
+(6, 0, '2018-06-08 19:37:18'),
+(7, 0, '2018-06-08 19:38:12'),
+(8, 0, '2018-06-08 19:38:23'),
+(9, 3335026, '2018-06-08 19:38:45'),
+(10, 3335026, '2018-06-08 19:38:53'),
+(11, 3335026, '2018-06-08 19:39:46'),
+(12, 3335026, '2018-06-08 19:39:56'),
+(13, 3335026, '2018-06-08 20:48:49'),
+(14, 3335026, '2018-06-08 20:49:05'),
+(15, 3335026, '2018-06-08 20:49:15'),
+(16, 3335026, '2018-06-08 20:49:43'),
+(17, 3335026, '2018-06-08 20:50:00'),
+(18, 3335026, '2018-06-08 20:50:17'),
+(19, 3335026, '2018-06-08 20:51:15'),
+(20, 3335026, '2018-06-08 20:51:45'),
+(21, 3335026, '2018-06-08 20:56:50'),
+(22, 3335026, '2018-06-08 20:58:31'),
+(23, 3335026, '2018-06-08 20:58:44');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
