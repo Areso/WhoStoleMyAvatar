@@ -36,10 +36,12 @@ def myread_watchdog(mycursor):
             myresl.append(row[1])
         if (len(myresl)==2):
             if (myresl[0]==myresl[1]):
-                restart = True;   
+                restart = True;
+		mycursor.execute("insert into reboots (id_record, datetime) values (null, null)")   
                 #args = ["sudo restart -now"]
                 #process = subprocess.Popen("sudo restart", stdout=subprocess.PIPE)
-                process = subprocess.call("sudo reboot", shell=True)
+                #process = subprocess.call("sudo reboot", shell=True)
+                print("reboot")
         return restart;
     except Exception as e:
         print("there was an error "+str(datetime.datetime.now())+" "+str(e))
